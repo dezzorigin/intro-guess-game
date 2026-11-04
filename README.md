@@ -1,5 +1,9 @@
 # Intro Guess Game
 
+## Live Demo
+
+🌐 https://888fa128.intro-guess-game.pages.dev
+
 Intro Guess Game — project by Nabil Aulia Dika (dezzorigin).
 
 ## Status Proyek
