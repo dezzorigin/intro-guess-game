@@ -1,15 +1,32 @@
 # Intro Guess Game
 
-Intro Guess Game project.
+Intro Guess Game — project by Nabil Aulia Dika (dezzorigin).
 
-## Tech stack
+## Status Proyek
 
-HTML/CSS/JS
+**Dalam pengembangan** _(README ada)_
 
-## Getting started
+## Tech Stack
 
-See project files for setup instructions.
+HTML/CSS/JavaScript
 
-## License
+## Struktur Proyek
 
-MIT
+```
+.gitignore
+README.md
+app.js
+index.html
+style.css
+```
+
+## Getting Started
+
+Buka file `index.html` di browser, atau serve folder dengan static server.
+
+## Lisensi
+
+MIT — lihat file [LICENSE](./LICENSE).
+
+---
+_Dibuat dan dikelola oleh Nabil Aulia Dika. Kontribusi dan issue welcome._
