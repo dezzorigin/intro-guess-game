@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tebak Intro Music 🎵</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="bg-glow"></div>
+<header class="top">
+  <div class="logo">🎵 TEBAK <span>INTRO</span></div>
+  <div class="stats">
+    <div class="stat">Skor <b id="score">0</b></div>
+    <div class="stat">Streak <b id="streak">0</b></div>
+    <div class="stat">Ronde <b id="round">1</b></div>
+  </div>
+</header>
+
+<main class="card">
+  <div class="category-row">
+    <select id="category">
+      <option value="indonesia">🇮🇩 Indonesia Hits</option>
+      <option value="barat">🌍 Barat Hits</option>
+      <option value="kpop">🇰🇷 K-Pop</option>
+      <option value="tiktok">📱 TikTok Viral</option>
+    </select>
+    <button id="btnNew" class="btn small">🔀 Lagu Baru</button>
+  </div>
+
+  <div id="loading" class="loading">⏳ Memuat lagu...</div>
+
+  <div class="levels" id="levels">
+    <button data-stage="0" class="active">Easy</button>
+    <button data-stage="1">Medium</button>
+    <button data-stage="2">Hard</button>
+    <button data-stage="3">Expert</button>
+    <button data-stage="4">Impossible</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress" id="progress">
+      <div class="fill" id="fill"></div>
+      <div class="seg" style="left:6.25%"></div>
+      <div class="seg" style="left:15.6%"></div>
+      <div class="seg" style="left:31.25%"></div>
+      <div class="seg" style="left:62.5%"></div>
+    </div>
+    <div class="time-row"><span id="timeLabel">1.0s</span><span class="total">16.0s</span></div>
+  </div>
+
+  <div class="player-row">
+    <button id="btnPlay" class="play" disabled>▶</button>
+    <div class="hint" id="hint">Tekan play untuk dengar intro 1 detik</div>
+  </div>
+
+  <div class="guesses" id="guesses"></div>
+
+  <div class="search-row">
+    <div class="search-box">
+      <span class="icon">🔍</span>
+      <input id="search" type="text" placeholder="Search songs... ketik judul / penyanyi" autocomplete="off" />
+      <div id="results" class="results hidden"></div>
+    </div>
+    <button id="btnSkip" class="btn skip">⏭ Skip</button>
+  </div>
+
+  <div class="actions">
+    <button id="btnGiveup" class="link">Menyerah & lihat jawaban</button>
+  </div>
+
+  <div id="reveal" class="reveal hidden">
+    <img id="art" src="" alt="" />
+    <div>
+      <div id="revealTitle" class="r-title">-</div>
+      <div id="revealArtist" class="r-artist">-</div>
+      <div id="revealMsg" class="r-msg"></div>
+      <div class="r-btns">
+        <button id="btnFull" class="btn small">▶ Putar Full Preview</button>
+        <button id="btnNext" class="btn small primary">⏭ Lanjut</button>
+      </div>
+      <audio id="audioFull" controls class="hidden-audio"></audio>
+    </div>
+  </div>
+
+  <audio id="audio" preload="auto"></audio>
+</main>
+
+<footer>Preview 30 detik via iTunes API • Easy 1s → Medium 2.5s → Hard 5s → Expert 10s → Impossible 16s</footer>
+<script src="app.js"></script>
+</body>
+</html>
