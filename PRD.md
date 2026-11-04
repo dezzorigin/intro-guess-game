@@ -5,7 +5,6 @@
 | Field | Nilai |
 |---|---|
 | Nama Proyek | Intro Guess Game |
-| Repo | dezzorigin/intro-guess-game |
 | Tech Stack | HTML/CSS/JavaScript |
 | Status | Dalam pengembangan |
 | Penanggung Jawab | Nabil Aulia Dika |
@@ -14,7 +13,7 @@
 
 ## 2. Latar Belakang
 
-Proyek ini dikembangkan sebagai bagian dari portofolio dan kebutuhan operasional. Dokumen ini mengikuti standar PRD nasional untuk memastikan ruang lingkup, fitur, dan kriteria keberhasilan terdefinisi dengan jelas.
+Proyek ini dikembangkan sebagai bagian dari portofolio dan kebutuhan operasional. Dokumen ini mengikuti standar PRD nasional agar ruang lingkup, fitur, dan kriteria keberhasilan terdefinisi dengan jelas.
 
 ## 3. Masalah yang Diselesaikan
 
@@ -40,7 +39,8 @@ Pengguna membutuhkan solusi digital yang efisien, terukur, dan mudah dipelihara 
 ## 6. Fitur & Persyaratan Fungsional
 
 Struktur proyek (file/direktori utama):
-- .gitignore
+- LICENSE
+- PRD.md
 - README.md
 - app.js
 - index.html
