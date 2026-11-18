@@ -17,11 +17,34 @@ build step, tidak ada backend, tidak ada database. Semua logika ada di
 | Deploy | Cloudflare Pages | Upload statis langsung, tanpa build |
 | CI | `.github/workflows/ci.yml` | `html-validate` + `markdown-link-check` |
 
+## Landing page
+
+Pengunjung baru melihat landing dulu; game tersembunyi di `#gameView`
+sampai tombol "Mulai Main" diklik. `enterGame()` (script inline di
+`index.html`) menyembunyikan `#landingView`, `#landingNav`, dan
+`#landingFooter`, lalu menampilkan `#gameView`. Ronde pertama sudah dimuat
+di latar belakang oleh `app.js` saat halaman dibuka, jadi game langsung
+siap saat pengunjung masuk.
+
+Struktur landing (`index.html`, CSS di akhir `style.css`, tema ungu-hijau
+sama dengan game):
+
+| Bagian | Isi |
+|---|---|
+| Navbar sticky (`#landingNav`) | Logo, link Cara Main (`#cara-main`) / Fitur (`#fitur`), ikon logo GitHub (SVG mark) di kanan → repo (tab baru), CTA "Mulai Main" |
+| Hero dua kolom | Badge, headline "Dengar intro-nya. Tebak lagunya.", subcopy, 2 CTA (Mulai Main + anchor Cara Main), preview mockup tampilan game (kartu statis, bukan screenshot produk lain) |
+| Cara Main (`#cara-main`) | 3 langkah + tabel level & skor |
+| Fitur (`#fitur`) | Grid 6 kartu fitur |
+| CTA band + footer | Ajakan main + link GitHub / Live / MIT |
+
 ## Alur satu ronde
 
 ![Diagram alur satu ronde game](diagrams/game-flow.svg)
 
-1. **Buka situs** — `index.html` dimuat, `app.js` langsung memulai ronde 1.
+0. **Buka situs** — landing tampil; `index.html` dimuat, `app.js` langsung
+   memulai ronde 1 di latar belakang (lagu sudah dimuat saat pengunjung
+   masih membaca landing).
+1. **Masuk game** — klik "Mulai Main": landing disembunyikan, game tampil.
 2. **Pilih kategori** — pemain memilih dari 4 kategori. Lagu baru diambil
    dari pool artis kategori itu (10 nama artis per kategori di `POOLS`).
 3. **Muat lagu acak** — `fetchSongs()` memanggil iTunes Search API
@@ -45,8 +68,8 @@ build step, tidak ada backend, tidak ada database. Semua logika ada di
 ## Peta file
 
 ```text
-index.html                  struktur halaman + semua id yang dipakai app.js
-style.css                   tema ungu (#2a0a3d) + hijau (#00ff87), responsif 600px
+index.html                  landing page + struktur game (semua id yang dipakai app.js)
+style.css                   tema ungu (#2a0a3d) + hijau (#00ff87), responsif 600px/900px
 app.js                      semua logika: STAGES, POOLS, fetchSongs, newRound,
                             playClip/stopClip, pencarian, penilaian, reveal
 favicon.svg                 favicon (nada + play)
