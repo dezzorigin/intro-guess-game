@@ -5,12 +5,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Tebak lagu dari intro-nya.** Dengarkan potongan awal sebuah lagu — makin
-pendek intro yang kamu butuhkan, makin besar poinmu. Langsung main, tanpa
-daftar, tanpa instalasi.
+pendek intro yang kamu butuhkan, makin besar poinmu. Buka link, lihat
+landing, klik **Mulai Main**, langsung main — tanpa daftar, tanpa instalasi.
 
 👉 **Main sekarang: [https://tebak-intro.pages.dev](https://tebak-intro.pages.dev)**
 
-![Tampilan utama Tebak Intro](docs/screenshots/1-home.png)
+![Landing Tebak Intro — navbar, hero, dan preview game](docs/screenshots/1-home.png)
+
+![Landing di ponsel](docs/screenshots/5-landing-mobile.png)
 
 ## Cara main
 
@@ -39,11 +41,12 @@ menampilkan jawabannya.
 
 ## 🎬 Video demo
 
-Satu ronde penuh, dari play sampai reveal (tanpa suara). Klik gambar untuk memutar:
+Dari landing sampai reveal jawaban benar — satu ronde penuh (tanpa suara).
+Klik gambar untuk memutar:
 
-[![Demo satu ronde Tebak Intro](docs/screenshots/3-reveal-win.png)](docs/demo/demo.mp4)
+[![Demo dari landing sampai reveal](docs/screenshots/3-reveal-win.png)](docs/demo/demo.mp4)
 
-▶️ [Tonton demo satu ronde (MP4, 14 detik, tanpa suara)](docs/demo/demo.mp4)
+▶️ [Tonton demo (MP4, 7 detik, tanpa suara)](docs/demo/demo.mp4)
 
 ## Jalankan lokal
 
@@ -66,9 +69,12 @@ Butuh internet — lagu dan audio preview di-stream dari iTunes Search API.
 
 ## Cara kerja
 
-Satu halaman statis (`index.html` + `style.css` + `app.js`). Lagu acak
-diambil dari iTunes Search API (tanpa key), preview 30 detik di-stream dari
-CDN audio iTunes. Tidak ada backend, tidak ada data pengguna yang dikumpulkan.
+Satu halaman statis (`index.html` + `style.css` + `app.js`). Pengunjung
+baru melihat landing dulu (navbar, hero, cara main, fitur); klik **Mulai
+Main** menampilkan game — ronde pertama sudah dimuat di latar belakang.
+Lagu acak diambil dari iTunes Search API (tanpa key), preview 30 detik
+di-stream dari CDN audio iTunes. Tidak ada backend, tidak ada data pengguna
+yang dikumpulkan.
 
 Detail lengkap: [docs/architecture.md](docs/architecture.md) (arsitektur,
 alur ronde, dan diagram) dan [PRD.md](PRD.md).
@@ -76,7 +82,7 @@ alur ronde, dan diagram) dan [PRD.md](PRD.md).
 ## Struktur proyek
 
 ```text
-index.html                  halaman game
+index.html                  landing page + halaman game
 style.css                   tema ungu-hijau, responsif
 app.js                      semua logika game
 favicon.svg                 favicon

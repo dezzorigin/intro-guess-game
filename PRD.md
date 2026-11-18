@@ -8,16 +8,18 @@
 | Repo | dezzorigin/intro-guess-game |
 | Live | https://tebak-intro.pages.dev |
 | Tech Stack | HTML / CSS / JavaScript (statis, tanpa build step, tanpa backend) |
-| Status | Live — rilis proper 1.1.0 |
+| Status | Live — rilis 1.2.0 (landing SaaS) |
 | Penanggung Jawab | Nabil Aulia Dika (dezzorigin) |
-| Versi Dokumen | 2.0 (diperbarui 18 Nov 2026) |
+| Versi Dokumen | 2.1 (diperbarui 18 Nov 2026) |
 
 ## 2. Latar Belakang
 
 Game tebak lagu dari intro: pemain mendengar potongan awal sebuah lagu, lalu
 menebak judulnya. Semakin pendek intro yang dibutuhkan, semakin besar poin.
 Game ini dibuat sebagai proyek portofolio — satu halaman statis yang langsung
-bisa dimainkan tanpa daftar, tanpa instalasi, tanpa server.
+bisa dimainkan tanpa daftar, tanpa instalasi, tanpa server. Pengunjung baru
+melihat landing page ala SaaS dulu (navbar, hero, cara main, fitur), lalu
+klik "Mulai Main" untuk masuk ke game.
 
 ## 3. Masalah yang Diselesaikan
 
@@ -37,6 +39,9 @@ bisa dimainkan tanpa daftar, tanpa instalasi, tanpa server.
 
 ### In Scope
 
+- Landing page ala SaaS: navbar sticky (logo, Cara Main, Fitur, ikon GitHub
+  di kanan → repo), hero dua kolom (headline + preview mockup tampilan
+  game), section Cara Main, section fitur, CTA band, footer.
 - 4 kategori lagu: Indonesia Hits, Barat Hits, K-Pop, TikTok Viral.
 - 5 level kesulitan: Easy 1 dtk, Medium 2,5 dtk, Hard 5 dtk, Expert 10 dtk,
   Impossible 16 dtk.
@@ -55,6 +60,7 @@ bisa dimainkan tanpa daftar, tanpa instalasi, tanpa server.
 
 | # | Fitur | Perilaku |
 |---|---|---|
+| 0 | Landing page | Pengunjung baru melihat landing; klik "Mulai Main" menyembunyikan landing + navbar dan menampilkan game; ronde pertama sudah dimuat di latar belakang |
 | 1 | Pilih kategori | Dropdown 4 kategori; lagu baru diambil dari pool artis kategori itu |
 | 2 | Putar intro | Tombol play memutar preview sepanjang durasi level aktif, lalu berhenti sendiri |
 | 3 | Tebak lagu | Ketik judul/penyanyi → hasil pencarian iTunes (maks. 8) → klik jawaban |
@@ -89,6 +95,7 @@ diagram ada di [docs/architecture.md](docs/architecture.md).
 |---|---|
 | Game inti (kategori, level, skor, reveal) | ✅ Selesai |
 | Rilis proper 1.1.0 (README, CI, docs, deploy) | ✅ Selesai 18 Nov 2026 |
+| Landing page ala SaaS (navbar + hero + cara main + fitur) | ✅ Selesai 18 Nov 2026 |
 | Video demo + screenshot di README | ✅ Selesai 18 Nov 2026 |
 | Skor tersimpan (localStorage) | 🔮 Berikutnya |
 | Mode duel / bagikan skor | 🔮 Berikutnya |
@@ -104,6 +111,7 @@ diagram ada di [docs/architecture.md](docs/architecture.md).
 
 ## 11. Kriteria Keberhasilan
 
+- Landing page tampil dulu untuk pengunjung baru; "Mulai Main" masuk ke game.
 - Satu ronde penuh (menang + lanjut + kalah) terverifikasi di situs live.
 - CI hijau (html-validate + link check).
 - README memuat screenshot + video demo dari situs live.

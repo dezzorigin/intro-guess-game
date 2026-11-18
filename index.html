@@ -9,7 +9,106 @@
 </head>
 <body>
 <div class="bg-glow"></div>
-<header class="top">
+
+<header id="landingNav" class="landing-nav" aria-label="Navigasi situs">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">🎵 TEBAK <span>INTRO</span></a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#cara-main">Cara Main</a>
+      <a href="#fitur">Fitur</a>
+    </nav>
+    <div class="nav-right">
+      <a class="gh-link" href="https://github.com/dezzorigin/intro-guess-game" target="_blank" rel="noopener" aria-label="Lihat di GitHub">
+        <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <button type="button" class="btn primary nav-cta" data-enter-game>Mulai Main</button>
+    </div>
+  </div>
+</header>
+
+<main id="landingView" aria-label="Landing">
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <div class="badge">🎵 Game tebak lagu &bull; Gratis, tanpa daftar</div>
+      <h1>Dengar intro-nya.<br>Tebak <span>lagunya.</span></h1>
+      <p class="sub">Potongan awal sebuah lagu diputar — makin pendek intro yang kamu butuhkan untuk menebak, makin besar poinmu. Empat kategori, lima level, tanpa akun, tanpa instalasi.</p>
+      <div class="hero-ctas">
+        <button type="button" class="btn primary big" data-enter-game>▶ Mulai Main</button>
+        <a class="btn ghost big" href="#cara-main">Lihat Cara Main ↓</a>
+      </div>
+      <div class="proof">4 kategori &bull; 5 level &bull; Skor &amp; streak &bull; Preview iTunes 30 detik</div>
+    </div>
+    <div class="hero-preview" aria-hidden="true">
+      <div class="preview-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="preview-url">tebak-intro.pages.dev</span></div>
+      <div class="preview-card">
+        <div class="preview-head"><span class="preview-logo">🎵 TEBAK <b>INTRO</b></span><span class="preview-chip">Skor <b>500</b></span></div>
+        <div class="preview-select">🇮🇩 Indonesia Hits</div>
+        <div class="preview-levels"><span class="on">Easy</span><span>Medium</span><span>Hard</span><span>Expert</span><span>Impossible</span></div>
+        <div class="preview-progress"><span></span></div>
+        <div class="preview-play">▶</div>
+        <div class="preview-search">🔍 Search songs... ketik judul / penyanyi</div>
+        <div class="preview-guess">✅ Espresso — Sabrina Carpenter <span>+500</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara-main" class="section">
+    <h2>Cara Main</h2>
+    <p class="section-sub">Tiga langkah, langsung main — tidak perlu daftar atau instal apa pun.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Dengarkan intro-nya</h3><p>Pilih kategori, tekan ▶. Intro mulai dari 1 detik (Easy).</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Ketik jawabanmu</h3><p>Cari judul atau penyanyi, klik hasil yang kamu maksud.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Kumpulkan poin</h3><p>Benar di Easy = 500 poin. Salah? Intro jadi lebih panjang, poin berkurang.</p></div>
+    </div>
+    <div class="levels-block">
+      <h3>Level &amp; skor</h3>
+      <table class="levels-table">
+        <thead><tr><th scope="col">Level</th><th scope="col">Durasi intro</th><th scope="col">Poin jawaban benar</th></tr></thead>
+        <tbody>
+          <tr><td>Easy</td><td>1 dtk</td><td>500</td></tr>
+          <tr><td>Medium</td><td>2,5 dtk</td><td>400</td></tr>
+          <tr><td>Hard</td><td>5 dtk</td><td>300</td></tr>
+          <tr><td>Expert</td><td>10 dtk</td><td>200</td></tr>
+          <tr><td>Impossible</td><td>16 dtk</td><td>100</td></tr>
+        </tbody>
+      </table>
+      <p class="levels-note">Salah tebak atau Skip naik satu level. Di Impossible, salah tebak = kalah (streak kembali 0, jawaban benar di-reveal). Kategori: Indonesia Hits, Barat Hits, K-Pop, TikTok Viral.</p>
+    </div>
+  </section>
+
+  <section id="fitur" class="section">
+    <h2>Kenapa seru?</h2>
+    <p class="section-sub">Semua yang dibutuhkan buat adu cepat telinga — tidak ada yang tidak perlu.</p>
+    <div class="features">
+      <div class="feature"><div class="f-icon">🎧</div><h3>4 Kategori Lagu</h3><p>Indonesia Hits, Barat Hits, K-Pop, dan TikTok Viral — lagunya diacak dari tiap kategori.</p></div>
+      <div class="feature"><div class="f-icon">🎚️</div><h3>5 Level Menantang</h3><p>Dari Easy 1 detik sampai Impossible 16 detik. Makin pendek intro, makin besar poin.</p></div>
+      <div class="feature"><div class="f-icon">🔥</div><h3>Skor &amp; Streak</h3><p>Jawaban beruntun menaikkan streak. Kalah di level terakhir dan streak kembali 0.</p></div>
+      <div class="feature"><div class="f-icon">▶️</div><h3>Preview Asli iTunes</h3><p>Audio preview 30 detik legal dari iTunes Search API — tanpa file audio di repo.</p></div>
+      <div class="feature"><div class="f-icon">🚀</div><h3>Tanpa Daftar</h3><p>Buka link, langsung main. Tanpa akun, tanpa instalasi, tanpa data yang dikumpulkan.</p></div>
+      <div class="feature"><div class="f-icon">💻</div><h3>Gratis &amp; Open Source</h3><p>Satu halaman statis, kode terbuka di GitHub, lisensi MIT.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Seberapa cepat telingamu?</h2>
+    <p>1 detik saja cukup buat yang hafal mati lagunya. Buktikan.</p>
+    <button type="button" class="btn primary big" data-enter-game>▶ Mulai Main — Gratis</button>
+  </section>
+</main>
+
+<footer id="landingFooter" class="landing-footer" aria-label="Kaki halaman">
+  <div class="footer-inner">
+    <span>🎵 <b>Tebak Intro</b> — game tebak lagu dari intro-nya.</span>
+    <span class="footer-links">
+      <a href="https://github.com/dezzorigin/intro-guess-game" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://tebak-intro.pages.dev">Live</a>
+      <a href="LICENSE">MIT</a>
+    </span>
+  </div>
+</footer>
+
+<div id="gameView" class="hidden">
+<header class="top" aria-label="Status game">
   <div class="logo">🎵 TEBAK <span>INTRO</span></div>
   <div class="stats">
     <div class="stat">Skor <b id="score">0</b></div>
@@ -18,7 +117,7 @@
   </div>
 </header>
 
-<main class="card">
+<div class="card">
   <div class="category-row">
     <select id="category">
       <option value="indonesia">🇮🇩 Indonesia Hits</option>
@@ -85,9 +184,23 @@
   </div>
 
   <audio id="audio" preload="auto"></audio>
-</main>
+</div>
 
-<footer>Preview 30 detik via iTunes API • Easy 1s → Medium 2.5s → Hard 5s → Expert 10s → Impossible 16s</footer>
+<footer aria-label="Keterangan game">Preview 30 detik via iTunes API • Easy 1s → Medium 2.5s → Hard 5s → Expert 10s → Impossible 16s</footer>
+</div>
+
+<script>
+function enterGame(){
+  document.getElementById('landingView').classList.add('hidden');
+  document.getElementById('landingNav').classList.add('hidden');
+  document.getElementById('landingFooter').classList.add('hidden');
+  document.getElementById('gameView').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('[data-enter-game]').forEach(function(b){
+  b.addEventListener('click', enterGame);
+});
+</script>
 <script src="app.js"></script>
 </body>
 </html>
