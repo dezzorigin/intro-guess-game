@@ -39,12 +39,11 @@ menampilkan jawabannya.
 
 ## 🎬 Video demo
 
-Satu ronde penuh, dari play sampai reveal (tanpa suara):
+Satu ronde penuh, dari play sampai reveal (tanpa suara). Klik gambar untuk memutar:
 
-<video src="docs/demo/demo.mp4" controls poster="docs/screenshots/3-reveal-win.png" width="100%"></video>
+[![Demo satu ronde Tebak Intro](docs/screenshots/3-reveal-win.png)](docs/demo/demo.mp4)
 
-Kalau video di atas tidak tampil, buka langsung:
-[docs/demo/demo.mp4](docs/demo/demo.mp4)
+▶️ [Tonton demo satu ronde (MP4, 14 detik, tanpa suara)](docs/demo/demo.mp4)
 
 ## Jalankan lokal
 
