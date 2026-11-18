@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate HTML
+        run: |
+          npm install -g html-validate@8
+          html-validate index.html
+
+      - name: Check links in docs
+        run: |
+          npm install -g markdown-link-check@3
+          markdown-link-check --config .markdown-link-check.json README.md
+          markdown-link-check --config .markdown-link-check.json docs/architecture.md

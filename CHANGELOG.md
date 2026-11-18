@@ -1,40 +1,33 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Semua perubahan penting proyek ini dicatat di sini. Format mengikuti
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-The format is based on [Keep a Changelog](https://keepachangerot.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [1.1.0] - 2026-11-18
 
-## [Unreleased]
+Rilis proper pertama (program P1 → P0, repo #1).
 
 ### Added
-- Initial Next.js project setup for Intro Guess Game
-- Game page components with guess-the-word functionality
-- Score tracking system
-- Leaderboard integration
-- Responsive design for mobile/desktop
 
-### Changed
-- Updated Next.js and dependencies to latest stable versions
-- Improved game logic and validation
-- Enhanced responsive design for all device sizes
-- Optimized asset loading for faster page loads
+- README lengkap standar repo top: cara main, tabel level & skor, screenshot,
+  video demo, dan link live.
+- CI GitHub Actions: `html-validate` + `markdown-link-check`.
+- `docs/architecture.md`: arsitektur, alur ronde, dan diagram alur game.
+- `favicon.svg` (sebelumnya favicon 404).
+- Deploy live di Cloudflare Pages: https://tebak-intro.pages.dev.
 
 ### Fixed
-- Fixed game logic bug on edge cases
-- Fixed score tracking edge cases
-- Fixed responsive design issues on mobile
 
-### Security
-- Updated dependency versions to patch vulnerabilities
-- Fixed potential XSS vulnerabilities in input fields
-- Fixed local storage data corruption issues
+- `stopClip()` ganda memanggil `pause()` sehingga memunculkan error
+  `AbortError` di console saat klip selesai. Sekarang idempotent.
+- Promise `audio.play()` yang gagal tidak lagi melempar uncaught error.
+- Instruksi "Getting Started" README yang salah (sebelumnya `npm install` /
+  `npm run dev` padahal proyek statis tanpa `package.json`).
 
-## [1.0.0] - 2024-11-05
+## [1.0.0] - 2026-11-05
 
 ### Added
-- Initial Intro Guess Game setup
-- Guess-the-word game functionality
-- Score tracking system
-- Leaderboard integration
-- Responsive design
+
+- Game inti: 4 kategori lagu, 5 level kesulitan (Easy 1 dtk → Impossible
+  16 dtk), skor, streak, ronde, pencarian lagu via iTunes Search API,
+  Skip, Menyerah, dan kartu reveal dengan full preview 30 detik.

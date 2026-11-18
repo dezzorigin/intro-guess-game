@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tebak Intro Music 🎵</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="bg-glow"></div>
@@ -25,32 +26,32 @@
       <option value="kpop">🇰🇷 K-Pop</option>
       <option value="tiktok">📱 TikTok Viral</option>
     </select>
-    <button id="btnNew" class="btn small">🔀 Lagu Baru</button>
+    <button type="button" id="btnNew" class="btn small">🔀 Lagu Baru</button>
   </div>
 
   <div id="loading" class="loading">⏳ Memuat lagu...</div>
 
   <div class="levels" id="levels">
-    <button data-stage="0" class="active">Easy</button>
-    <button data-stage="1">Medium</button>
-    <button data-stage="2">Hard</button>
-    <button data-stage="3">Expert</button>
-    <button data-stage="4">Impossible</button>
+    <button type="button" data-stage="0" class="active">Easy</button>
+    <button type="button" data-stage="1">Medium</button>
+    <button type="button" data-stage="2">Hard</button>
+    <button type="button" data-stage="3">Expert</button>
+    <button type="button" data-stage="4">Impossible</button>
   </div>
 
   <div class="progress-wrap">
     <div class="progress" id="progress">
       <div class="fill" id="fill"></div>
-      <div class="seg" style="left:6.25%"></div>
-      <div class="seg" style="left:15.6%"></div>
-      <div class="seg" style="left:31.25%"></div>
-      <div class="seg" style="left:62.5%"></div>
+      <div class="seg seg-1"></div>
+      <div class="seg seg-2"></div>
+      <div class="seg seg-3"></div>
+      <div class="seg seg-4"></div>
     </div>
     <div class="time-row"><span id="timeLabel">1.0s</span><span class="total">16.0s</span></div>
   </div>
 
   <div class="player-row">
-    <button id="btnPlay" class="play" disabled>▶</button>
+    <button type="button" id="btnPlay" class="play" disabled>▶</button>
     <div class="hint" id="hint">Tekan play untuk dengar intro 1 detik</div>
   </div>
 
@@ -59,25 +60,25 @@
   <div class="search-row">
     <div class="search-box">
       <span class="icon">🔍</span>
-      <input id="search" type="text" placeholder="Search songs... ketik judul / penyanyi" autocomplete="off" />
+      <input id="search" type="text" placeholder="Search songs... ketik judul / penyanyi" autocomplete="off">
       <div id="results" class="results hidden"></div>
     </div>
-    <button id="btnSkip" class="btn skip">⏭ Skip</button>
+    <button type="button" id="btnSkip" class="btn skip">⏭ Skip</button>
   </div>
 
   <div class="actions">
-    <button id="btnGiveup" class="link">Menyerah & lihat jawaban</button>
+    <button type="button" id="btnGiveup" class="link">Menyerah &amp; lihat jawaban</button>
   </div>
 
   <div id="reveal" class="reveal hidden">
-    <img id="art" src="" alt="" />
+    <img id="art" src="favicon.svg" alt="">
     <div>
       <div id="revealTitle" class="r-title">-</div>
       <div id="revealArtist" class="r-artist">-</div>
       <div id="revealMsg" class="r-msg"></div>
       <div class="r-btns">
-        <button id="btnFull" class="btn small">▶ Putar Full Preview</button>
-        <button id="btnNext" class="btn small primary">⏭ Lanjut</button>
+        <button type="button" id="btnFull" class="btn small">▶ Putar Full Preview</button>
+        <button type="button" id="btnNext" class="btn small primary">⏭ Lanjut</button>
       </div>
       <audio id="audioFull" controls class="hidden-audio"></audio>
     </div>

@@ -1,53 +1,104 @@
-# Intro Guess Game
+# 🎵 Tebak Intro
 
-Intro Guess Game — project oleh Nabil Aulia Dika (dezzorigin).
+[![CI](https://github.com/dezzorigin/intro-guess-game/actions/workflows/ci.yml/badge.svg)](https://github.com/dezzorigin/intro-guess-game/actions/workflows/ci.yml)
+[![Live](https://img.shields.io/badge/live-tebak--intro.pages.dev-00ff87)](https://tebak-intro.pages.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Status Proyek
+**Tebak lagu dari intro-nya.** Dengarkan potongan awal sebuah lagu — makin
+pendek intro yang kamu butuhkan, makin besar poinmu. Langsung main, tanpa
+daftar, tanpa instalasi.
 
-**Dalam pengembangan** _(README ada)_
+👉 **Main sekarang: [https://tebak-intro.pages.dev](https://tebak-intro.pages.dev)**
 
-## 🌐 Live Demo
+![Tampilan utama Tebak Intro](docs/screenshots/1-home.png)
 
-**https://888fa128.intro-guess-game.pages.dev**
+## Cara main
 
-## 📋 Tech Stack
+1. Pilih kategori lagu (Indonesia Hits, Barat Hits, K-Pop, atau TikTok Viral).
+2. Tekan tombol ▶ untuk mendengar intro — mulai dari 1 detik (Easy).
+3. Ketik judul atau penyanyi di kolom pencarian, lalu klik jawabanmu.
+4. Benar? Skor masuk, lanjut ke ronde berikut. Salah? Intro-nya jadi lebih
+   panjang — tapi poinmu berkurang.
 
-HTML/CSS/JavaScript
+![Jawaban benar: reveal lagu + skor](docs/screenshots/3-reveal-win.png)
 
-## 🏗️ Arsitektur
+## Level & skor
 
-```mermaid
-flowchart LR
-  U[Pengguna] --> B[Browser]
-  B --> S[Static Site]
-```
+| Level | Durasi intro | Poin jawaban benar |
+|---|---|---|
+| Easy | 1 dtk | 500 |
+| Medium | 2,5 dtk | 400 |
+| Hard | 5 dtk | 300 |
+| Expert | 10 dtk | 200 |
+| Impossible | 16 dtk | 100 |
 
-## 📁 Struktur Proyek
+Salah tebak atau Skip naik satu level. Di level Impossible, salah tebak =
+kalah (streak kembali 0, jawaban benar di-reveal). Tombol **Lanjut** memuat
+lagu baru — ronde naik, skor dipertahankan. Tombol **Menyerah** langsung
+menampilkan jawabannya.
 
-```
-LICENSE
-PRD.md
-README.md
-app.js
-index.html
-style.css
-```
+## 🎬 Video demo
 
-## 🚀 Getting Started
+Satu ronde penuh, dari play sampai reveal (tanpa suara):
+
+<video src="docs/demo/demo.mp4" controls poster="docs/screenshots/3-reveal-win.png" width="100%"></video>
+
+Kalau video di atas tidak tampil, buka langsung:
+[docs/demo/demo.mp4](docs/demo/demo.mp4)
+
+## Jalankan lokal
+
+Tidak ada build step, tidak ada dependensi yang perlu diinstal. Cukup sajikan
+folder ini sebagai situs statis:
 
 ```bash
-# Install dependencies
-npm install
-
-# Jalankan development server
-npm run dev
+# dari folder repo
+python3 -m http.server 8000
+# lalu buka http://localhost:8000
 ```
 
-> Untuk project HTML/Python/Go, lihat instruksi di atas atau file konfigurasi.
+Atau dengan Node:
 
-## 📄 Lisensi
+```bash
+npx serve .
+```
 
-MIT — lihat [LICENSE](./LICENSE).
+Butuh internet — lagu dan audio preview di-stream dari iTunes Search API.
+
+## Cara kerja
+
+Satu halaman statis (`index.html` + `style.css` + `app.js`). Lagu acak
+diambil dari iTunes Search API (tanpa key), preview 30 detik di-stream dari
+CDN audio iTunes. Tidak ada backend, tidak ada data pengguna yang dikumpulkan.
+
+Detail lengkap: [docs/architecture.md](docs/architecture.md) (arsitektur,
+alur ronde, dan diagram) dan [PRD.md](PRD.md).
+
+## Struktur proyek
+
+```text
+index.html                  halaman game
+style.css                   tema ungu-hijau, responsif
+app.js                      semua logika game
+favicon.svg                 favicon
+.github/workflows/ci.yml    html-validate + markdown-link-check
+docs/architecture.md        arsitektur & alur game
+docs/diagrams/game-flow.svg  diagram alur ronde
+docs/screenshots/          screenshot situs live
+docs/demo/demo.mp4          video demo satu ronde
+PRD.md                      product requirements
+CHANGELOG.md                riwayat rilis
+```
+
+## Berkontribusi
+
+Perubahan masuk lewat Pull Request ke `main` — CI (html-validate + link
+check) harus hijau dulu sebelum merge. Lihat
+[CHANGELOG.md](CHANGELOG.md) untuk riwayat rilis.
+
+## Lisensi
+
+MIT — lihat [LICENSE](LICENSE).
 
 ---
-_Dikembangkan oleh **dezzorigin** (Nabil Aulia Dika)._
+Dikembangkan oleh **dezzorigin** (Nabil Aulia Dika).
