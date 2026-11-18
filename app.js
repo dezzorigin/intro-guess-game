@@ -56,7 +56,9 @@ function updateStages(){
 function playClip(seconds, isFull=false){
   const el=isFull?audioFull:audio;
   if(!isFull){ el.src=answer.previewUrl; }
-  el.currentTime=0; el.play();
+  el.currentTime=0;
+  const p=el.play();
+  if(p && p.catch) p.catch(()=>{ /* preview gagal dimuat: biarkan ronde lanjut, tombol tetap bisa dipakai */ });
   playing=true; $('btnPlay').textContent='⏸';
   let start=Date.now();
   clearInterval(progTimer); clearTimeout(cutTimer);
@@ -71,8 +73,8 @@ function playClip(seconds, isFull=false){
   }
 }
 function stopClip(){
-  audio.pause(); clearInterval(progTimer); clearTimeout(cutTimer);
-  playing=false; $('btnPlay').textContent='▶';
+  clearInterval(progTimer); clearTimeout(cutTimer); progTimer=null; cutTimer=null;
+  if(playing){ audio.pause(); playing=false; $('btnPlay').textContent='▶'; }
   $('fill').style.width=(STAGES[stage]/16*100)+'%';
 }
 $('btnPlay').onclick=()=>{

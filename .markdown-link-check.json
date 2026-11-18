@@ -1,0 +1,1 @@
+{"aliveStatusCodes":[200,206],"ignorePatterns":[{"pattern":"^https://github\\.com/dezzorigin/intro-guess-game/actions/workflows/ci\\.yml"}],"retryOn429":true,"timeout":"20s"}

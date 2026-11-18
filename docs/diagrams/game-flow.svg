@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b21a8"/>
+    </marker>
+  </defs>
+  <rect width="960" height="520" fill="#ffffff"/>
+
+  <!-- row 1 -->
+  <g>
+    <rect x="20" y="24" width="200" height="56" rx="12" fill="#00ff87"/>
+    <text x="120" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#0a2a18">Buka situs</text>
+    <text x="120" y="68" text-anchor="middle" font-size="12" fill="#0a2a18">tebak-intro.pages.dev</text>
+    <line x1="220" y1="52" x2="244" y2="52" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+
+    <rect x="250" y="24" width="200" height="56" rx="12" fill="#2a0a3d"/>
+    <text x="350" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Pilih kategori</text>
+    <text x="350" y="68" text-anchor="middle" font-size="12" fill="#c9b8d9">4 kategori lagu</text>
+    <line x1="450" y1="52" x2="474" y2="52" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+
+    <rect x="480" y="24" width="200" height="56" rx="12" fill="#2a0a3d"/>
+    <text x="580" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Muat lagu acak</text>
+    <text x="580" y="68" text-anchor="middle" font-size="12" fill="#c9b8d9">iTunes Search API</text>
+    <line x1="680" y1="52" x2="704" y2="52" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+
+    <rect x="710" y="24" width="200" height="56" rx="12" fill="#2a0a3d"/>
+    <text x="810" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Play intro</text>
+    <text x="810" y="68" text-anchor="middle" font-size="12" fill="#c9b8d9">1–16 dtk (per level)</text>
+    <line x1="810" y1="80" x2="810" y2="144" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- row 2 -->
+  <g>
+    <rect x="710" y="150" width="200" height="56" rx="12" fill="#2a0a3d"/>
+    <text x="810" y="174" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Ketik tebakan</text>
+    <text x="810" y="194" text-anchor="middle" font-size="12" fill="#c9b8d9">pilih dari hasil cari</text>
+    <line x1="710" y1="178" x2="646" y2="178" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+
+    <polygon points="580,140 640,178 580,216 520,178" fill="#3a0f57" stroke="#ff2fb3" stroke-width="2"/>
+    <text x="580" y="183" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Benar?</text>
+    <text x="528" y="168" text-anchor="end" font-size="12" font-weight="700" fill="#009e5f">Ya</text>
+    <text x="596" y="238" text-anchor="start" font-size="12" font-weight="700" fill="#d43d6b">Tidak</text>
+    <line x1="520" y1="178" x2="456" y2="178" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+
+    <rect x="250" y="150" width="200" height="56" rx="12" fill="#00ff87"/>
+    <text x="350" y="174" text-anchor="middle" font-size="15" font-weight="700" fill="#0a2a18">Skor + reveal</text>
+    <text x="350" y="194" text-anchor="middle" font-size="12" fill="#0a2a18">Lanjut → ronde baru</text>
+    <line x1="350" y1="206" x2="350" y2="130" stroke="#009e5f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+    <text x="362" y="172" font-size="12" fill="#009e5f">kembali ke Pilih kategori</text>
+  </g>
+
+  <!-- no branch -->
+  <g>
+    <line x1="580" y1="216" x2="580" y2="294" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="480" y="300" width="200" height="56" rx="12" fill="#2a0a3d"/>
+    <text x="580" y="324" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Salah / Skip</text>
+    <text x="580" y="344" text-anchor="middle" font-size="12" fill="#c9b8d9">naik 1 level</text>
+    <line x1="580" y1="356" x2="580" y2="390" stroke="#6b21a8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="480" y="396" width="200" height="56" rx="12" fill="#2a0a3d" stroke="#ff4d6d" stroke-width="2"/>
+    <text x="580" y="420" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Level habis → kalah</text>
+    <text x="580" y="440" text-anchor="middle" font-size="12" fill="#c9b8d9">reveal jawaban</text>
+  </g>
+
+  <text x="480" y="498" text-anchor="middle" font-size="13" fill="#6b7280">Skor hilang saat refresh • Preview 30 dtk via iTunes • Tanpa backend, tanpa login</text>
+</svg>
