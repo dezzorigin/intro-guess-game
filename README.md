@@ -86,6 +86,7 @@ index.html                  landing page + halaman game
 style.css                   tema ungu-hijau, responsif
 app.js                      semua logika game
 favicon.svg                 favicon
+og-image.png                gambar preview Open Graph/Twitter (1200x630)
 .github/workflows/ci.yml    html-validate + markdown-link-check
 docs/architecture.md        arsitektur & alur game
 docs/diagrams/game-flow.svg  diagram alur ronde
